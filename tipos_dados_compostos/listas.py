@@ -46,3 +46,15 @@ remover_anime_nome("Naruto")  # Remove o anime "Naruto"
 lista_animes_atuais = [a if a != "" else f"{a}\n" for a in listas_animes]  # Remove animes vazios
 print("\nLista de animes atuais:")
 print(lista_animes_atuais)
+
+print(lista_animes_atuais[:3])
+
+
+lista_nuemros = [1, 2, 3, 4, 5]
+listas_letras = ['a', 'b', 'c', 'd', 'e']
+listas_numeros_letras = []
+
+for i in zip(lista_nuemros, listas_letras):
+    listas_numeros_letras.append(i)
+      
+print(listas_numeros_letras)  # [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e')]      
