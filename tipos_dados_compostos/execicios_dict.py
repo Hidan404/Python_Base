@@ -1,4 +1,6 @@
-def armazenar_produtos() -> list:
+from pprint import pprint
+
+def armazenar_produtos() -> list[tuple]:
     lista_tuplas = []
     while True:
         produto = input("Digite um produto (ou 'sair' para finalizar): ")
@@ -11,19 +13,18 @@ def armazenar_produtos() -> list:
             print("Preço inválido. Tente novamente.")
     return lista_tuplas
 
-def tuplas_para_dict(tupla: tuple) -> dict:
-    dicioanrio = {}
-    for c, k in tupla:
-        dicioanrio[c] = k
-
-    return dicioanrio    
+def tuplas_para_dict(tuplas: list[tuple]) -> dict:
+    dicionario = {}
+    for c, k in tuplas:
+        dicionario[c] = k
+    return dicionario    
 
 def main():
     produtos = armazenar_produtos()
     dicionario_produtos = tuplas_para_dict(produtos)
-    print("Dicionário de produtos:", dicionario_produtos)
+    print("Dicionário de produtos:")
+    pprint(dicionario_produtos)
     print(f"\nLista de Tuplas: {produtos}")
     
-
 main()    
 
