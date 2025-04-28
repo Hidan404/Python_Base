@@ -4,7 +4,7 @@ from translate import Translator
 
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 __author__ = "Ronald"
 __license__ = "MIT"
 
@@ -26,24 +26,22 @@ def leitor_var():
     """
     Função que lê o arquivo de variáveis de ambiente e imprime a linguagem atual.   
     """
-  
+   
+    linguagens = {
+        "pt_BR": "pt",
+        "en_US": "en",
+        "es_SP": "es"
+    }
     try:
-        if linguagem_atual == "pt_BR":
-            print(f"linguagem atual: {linguagem_atual}")
-            print("Ola Mundo")
-            translator = Translator(to_lang="pt")
+        for linguagem in linguagens:
+            translator = Translator(to_lang=linguagens[linguagem_atual])
             traduzido = translator.translate("Hello World")
-            salvar_json({"language": f"linguagem atual: {linguagem_atual}", "translated": traduzido})
-            
-        elif linguagem_atual == "en_US":
-            print(f"Liguagem atual: {linguagem_atual}")
-            translator = Translator(to_lang="en")
-            traduzido = translator.translate("Ola mundo")
-            salvar_json({"language": f"linguagem atual: {linguagem_atual}", "translated": traduzido})
-        else:
-            print(f"linguagem atual: {linguagem_atual}")
-            print("linguagem não suportada")
-            salvar_json({"language": linguagem_atual})
+
+        salvar_json({
+            "Linguagem": linguagens[linguagem_atual],
+            "Traduzido": traduzido
+            })
+        print(linguagens[linguagem_atual].translate("As variáveis de ambiente foram salvas no arquivo variaveis.json."))
     except Exception as e:
         print(f"Error: {e}")        
 
