@@ -30,16 +30,18 @@ def leitor_var():
     argumentos = {
         "lang": None
     }
-
-    for arg in sys.argv[1:]:
-        if arg.startswith("--lang="):
-            valor = arg.split("=")[1]
-            argumentos["lang"] = valor
+    try:
+        for arg in sys.argv[1:]:
+            if arg.startswith("--lang="):
+                valor = arg.split("=")[1]
+                argumentos["lang"] = valor
+    except Exception as e:
+        print(f"erro: {e}")            
 
     linguagem_atual = argumentos["lang"]
 
     if linguagem_atual is None:
-        linguagem_atual = os.getenv("Lang", "en_US")
+        linguagem_atual = input("Digite um idiomaexemplo 'es_SP': ")
 
     linguagens = {
         "pt_BR": "pt",
