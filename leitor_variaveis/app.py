@@ -1,6 +1,7 @@
 import os
 import json
 from translate import Translator
+import sys
 
 
 
@@ -26,7 +27,15 @@ def leitor_var():
     """
     Função que lê o arquivo de variáveis de ambiente e imprime a linguagem atual.   
     """
-   
+    argumentos = {
+        "lang": None
+    }
+
+    for arg in sys.argv[1:]:
+        if arg.startswith("--lang="):
+            valor = arg.split("=")[1]
+            argumentos["lang"] = valor
+
     linguagens = {
         "pt_BR": "pt",
         "en_US": "en",
@@ -49,4 +58,5 @@ def leitor_var():
 
 
 if __name__ == "__main__":
+    print(sys.argv)
     leitor_var()
