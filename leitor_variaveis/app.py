@@ -10,7 +10,7 @@ __author__ = "Ronald"
 __license__ = "MIT"
 
 
-linguagem_atual = os.getenv("LANG")[:5]
+
 
 def salvar_json(dados):
     try:
@@ -36,21 +36,29 @@ def leitor_var():
             valor = arg.split("=")[1]
             argumentos["lang"] = valor
 
+    linguagem_atual = argumentos["lang"]
+
+    if linguagem_atual is None:
+        linguagem_atual = os.getenv("Lang", "en_US")
+
     linguagens = {
         "pt_BR": "pt",
         "en_US": "en",
         "es_SP": "es"
     }
     try:
-        for linguagem in linguagens:
-            translator = Translator(to_lang=linguagens[linguagem_atual])
-            traduzido = translator.translate("Hello World")
+        idioma_destino = linguagens.get(linguagem_atual)
+        if idioma_destino is None:
+            raise ValueError(f"Linguagem não reconhecida: {linguagem_atual}")
+        
+        translator = Translator(to_lang=idioma_destino)
+        traduzido = translator.translate("Hello World")
 
         salvar_json({
             "Linguagem": linguagens[linguagem_atual],
             "Traduzido": traduzido
             })
-        print(linguagens[linguagem_atual].translate("As variáveis de ambiente foram salvas no arquivo variaveis.json."))
+        print(traduzido)
     except Exception as e:
         print(f"Error: {e}")        
 
