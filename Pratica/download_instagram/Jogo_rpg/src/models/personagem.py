@@ -69,6 +69,21 @@ class Personagem():
         
     def visualizar_status(self):
         print(f"👤 {self.nome} - HP: {self.HP}, Nível: {self.nivel}, Força: {self.forca}, Experiência: {self.experiencia}, Status: {self.status}")    
+
+    def sair_do_jogo(self):
+        print(f"👋 {self.nome} saiu do jogo. Até a próxima aventura!")     
+
+
+    def receber_dano(self, dano):
+        self.HP -= dano
+        if self.HP <= 0:
+            self.status = "morto"
+            print(f"💀 {self.nome} foi derrotado!")
+        else:
+            print(f"👤 {self.nome} recebeu {dano} de dano. HP restante: {self.HP}.")
+
+
+
 p: Personagem = Personagem("Hidan") 
 print(p.usar_item()) 
 p.usar_item()
