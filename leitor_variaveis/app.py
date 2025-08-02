@@ -9,15 +9,13 @@ __version__ = "0.1.2"
 __author__ = "Ronald"
 __license__ = "MIT"
 
-
-
+def path_root():
+    ROOT_PATH  = os.path.join(os.path.dirname(__file__),"variaveis.json")
+    return ROOT_PATH
 
 def salvar_json(dados):
     try:
-        caminho = os.path.abspath(__file__)
-        caminho = os.path.dirname(caminho)
-        
-        with open(f"{caminho}/variaveis.json", "w", encoding="utf-8") as f:
+        with open(path_root(), "w", encoding="utf-8") as f:
             json.dump(dados, f, indent=4, ensure_ascii=False)
     except Exception as e:
         print(f"An error occurred: {e}")    
@@ -70,3 +68,4 @@ def leitor_var():
 if __name__ == "__main__":
     print(sys.argv)
     leitor_var()
+    print(chr(7))
