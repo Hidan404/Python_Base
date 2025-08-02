@@ -1,11 +1,13 @@
 from random import Random
 
+
 class Item():
     def __init__(self, nome, tipo, poder, qtd):
         self.nome = nome
         self.tipo = tipo
         self.poder = poder
         self.quantidade = qtd
+        
     
     def __str__(self):
         return f"{self.nome} | {self.tipo} | {self.poder} | {self.quantidade}"    
