@@ -1,4 +1,5 @@
-from inventario import Inventario
+from src.models.inventario import Inventario
+
 import random
 
 class Personagem():
@@ -12,9 +13,12 @@ class Personagem():
         self.inventario = Inventario()  # Inicializa o inventário do personagem
     def atacar(self):
         if self.status == "vivo" and self.HP > 0:
-            print(f"⚔️ {self.nome} ataca com força {self.forca}.")
+            dano = random.randint(1, self.forca)
+            print(f"⚔️ {self.nome} ataca causando {dano} de dano.")
+            return dano
         else:
             print(f"❌ {self.nome} não pode atacar porque está {self.status}.")
+
 
 
         
@@ -84,7 +88,4 @@ class Personagem():
 
 
 
-p: Personagem = Personagem("Hidan") 
-print(p.usar_item()) 
-p.usar_item()
-p.usar_item()       
+      
