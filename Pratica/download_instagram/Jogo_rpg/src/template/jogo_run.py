@@ -1,4 +1,4 @@
-from  models.personagem import Personagem
+from  src.models.personagem import Personagem
 from models.monstro import Monstro
 import random
 
@@ -15,6 +15,15 @@ class Inicio_jogo():
 
     def inciar(self):
         self.boas_vindas_jogo()
+        while True:
+            if self.personagem.HP > 0:
+                self.personagem.visualizar_status()
+                break
+
+
+
+
+
 
 
    
