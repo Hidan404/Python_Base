@@ -13,12 +13,14 @@ class Inicio_jogo():
         print(f"👹 Monstro: {self.mosntro.nome}")
         print("⚔️ Prepare-se para a aventura!")    
 
+    def aumentar_dificulade_monstro(self):
+        self.mosntro.
     def inciar(self):
         self.boas_vindas_jogo()
         while True:
             if self.personagem.HP > 0:
                 self.personagem.visualizar_status()
-                escolha = input("Escolha uma ação: (1) Atacar (2) Usar Item (3) Fugir (4) Sair: ")
+                escolha = input("Escolha uma ação: (1) Atacar (2) Usar Item (3) Visualizar Status (4) Fugir (5) Sair: ")
                 if escolha == '1':
                     dano = self.personagem.atacar()
                     print(f"⚔️ Você atacou o {self.mosntro.nome} causando {dano} de dano.")
@@ -31,12 +33,18 @@ class Inicio_jogo():
                             self.personagem.nivel += 1
                             self.personagem.forca += 2
                             print(f"🚀 Parabéns! Você subiu para o nível {self.personagem.nivel}. Força aumentada para {self.personagem.forca}.")
+                    if self.personagem.status == "vivo" or self.mosntro.status == "vivo":
+                        dano_monstro = self.mosntro.atacar()
+                        print(f"⚔️ Você atacou o {self.personagem.nome} causando {dano_monstro} de dano.")
+                        self.personagem.receber_dano(dano_monstro)
                         
                 elif escolha == "2":
                     print(self.personagem.usar_item())
                 elif escolha == "3":
                     self.personagem.fugir()
                 elif escolha == "4":
+                    self.personagem.visualizar_status()    
+                elif escolha == "5":
                     escolha_sair = input("Você tem certeza que deseja sair? (s/n): ").lower()
                     if escolha_sair == 's':
                         self.personagem.sair_do_jogo()
