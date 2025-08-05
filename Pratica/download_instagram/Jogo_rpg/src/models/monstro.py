@@ -1,7 +1,7 @@
 
 
 class Monstro():
-    def __init__(self):
+    def __init__(self, nome, nivel_personagem):
         self.nome = "Beholder"
         self.hp = 40
         self.forca = 5
