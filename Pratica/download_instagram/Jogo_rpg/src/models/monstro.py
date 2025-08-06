@@ -21,7 +21,5 @@ class Monstro():
         else:
             print(f"👹 {self.nome} recebeu {dano} de dano. HP restante: {self.hp}.") 
             
-    def aumentar_nivel(self):
-        niveis = [1,2,3,4,5] 
-        if niveis:
-            self.hp *= niveis[]         
+
+              
