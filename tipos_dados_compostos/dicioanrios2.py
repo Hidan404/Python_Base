@@ -13,3 +13,8 @@ coompra = {
 
 
 total = coompra["quantidade"] * produto["preco"]
+
+print(f"Cliente: {coompra['cliente']['nome']}")
+print(f"Produto: {coompra['produto']['produto']}")
+print(f"Quantidade: {coompra['quantidade']}")
+print(f"Total: {total}")
