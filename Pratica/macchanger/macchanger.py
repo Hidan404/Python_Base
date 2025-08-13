@@ -44,8 +44,7 @@ class MacChanger:
         try:
             caminho_powershell = self.path_root()
             
-            executar = subprocess.run(['powershell.exe', '-ExecutionPolicy', 'Bypass', '-File', caminho_powershell],
-                capture_output=True,text=True])
+            executar = subprocess.run(['powershell.exe', '-ExecutionPolicy', 'Bypass', '-File', caminho_powershell],capture_output=True,text=True)
             
             
             print(f'''
