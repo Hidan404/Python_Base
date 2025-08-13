@@ -8,8 +8,10 @@ class Calculadora():
         self.numero2 = numero2
         
     def somar(self):
-        return self.numero1
-            
+        return self.numero1 + self.numero2
+
+    def subtrair(self):
+        return self.numero1 - self.numero2        
         
 def main():
     try:
