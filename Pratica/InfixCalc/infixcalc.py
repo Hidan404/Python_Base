@@ -1,4 +1,5 @@
-import sys
+import sys, os
+from datetime import datetime
 
 class Calculadora():
     def __init__(self,operacao_user, numero1, numero2 ):
@@ -31,9 +32,20 @@ class Calculadora():
         if operacao:
             return operacao()
         return "operacao invalida"
+    
+def log_resultados(v1, v2, operacao, resultado):
+    path_root = os.path.join(os.path.dirname(__file__),"infix_log.txt")
+    tempo = datetime.now().isoformat().split(".")
+    tempo_formatado = tempo[0]
+    usuario = os.getenv("USER")
+    with open(path_root,"a") as arquivo:
+        arquivo.write(f"{tempo_formatado} - {operacao} {v1} {v2} = {resultado} - {usuario} \n")
         
-            
-                
+        return arquivo
+              
+def ver_log(arquivo):  
+    for arq in arquivo:
+        print(arq)  
         
 def main():
     try:
@@ -42,7 +54,6 @@ def main():
             operacao = sys.argv[1]
             numero1, numero2 = int(sys.argv[2]), int(sys.argv[3])
             
-            
             if not sys.argv[2].isdigit() and not sys.argv[3].isdigit():
                 print("Numero1 e Numero2 tem que ser numeros")
             
@@ -50,6 +61,9 @@ def main():
             
             valor = calc.executar()
             print(valor)
+            log = log_resultados(operacao, numero1, numero2, valor)
+            ver_log(log)
+
             
     except Exception as e:
         return f"Erro: {e}"    
