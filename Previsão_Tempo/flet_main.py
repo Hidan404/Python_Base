@@ -39,7 +39,7 @@ def main(page: ft.Page):
     
     cidade_input = ft.TextField(label="Digite o nome da cidade", width=300)
     botao_clima = ft.ElevatedButton(text="Consultar Clima", on_click=clima)
-    resultado_text = ft.Text(value="", size=20, color=ft.colors.GREEN)
+    resultado_text = ft.Text(value="", size=20, color=ft.Colors.BLUE)
 
     page.add(cidade_input, botao_clima, resultado_text)
 
