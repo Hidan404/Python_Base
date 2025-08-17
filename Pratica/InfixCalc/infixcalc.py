@@ -32,20 +32,26 @@ class Calculadora():
         if operacao:
             return operacao()
         return "operacao invalida"
-    
-def log_resultados(v1, v2, operacao, resultado):
+
+def caminho_arquivo():
     path_root = os.path.join(os.path.dirname(__file__),"infix_log.txt")
+
+    return path_root
+
+def log_resultados(v1, v2, operacao, resultado):
+    path_root = caminho_arquivo()
     tempo = datetime.now().isoformat().split(".")
     tempo_formatado = tempo[0]
     usuario = os.getenv("USER")
     with open(path_root,"a") as arquivo:
         arquivo.write(f"{tempo_formatado} - {operacao} {v1} {v2} = {resultado} - {usuario} \n")
-        
         return arquivo
               
 def ver_log(arquivo):  
-    for arq in arquivo:
-        print(arq)  
+    caminho = arquivo
+    with open(caminho, "r", encoding="UTF-8") as f:
+        print("\n*********\n")
+        print(f.read())
         
 def main():
     try:
@@ -62,7 +68,9 @@ def main():
             valor = calc.executar()
             print(valor)
             log = log_resultados(operacao, numero1, numero2, valor)
-            ver_log(log)
+
+            caminho = caminho_arquivo()
+            ver_log(caminho)
 
             
     except Exception as e:
