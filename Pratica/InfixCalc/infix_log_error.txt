@@ -1,0 +1,23 @@
+2025-08-20 12:41:00,577 - ERROR - Erro ao executar a calculadora invalid literal for int() with base 10: 'infixcalc.py'
+2025-08-20 12:41:03,974 - ERROR - Erro ao executar a calculadora invalid literal for int() with base 10: 'infixcalc.py'
+2025-08-20 12:49:33,084 - ERROR - Erro ao executar a calculadora invalid literal for int() with base 10: 'infixcalc.py'
+2025-08-20 12:49:57,049 - ERROR - Erro ao executar a calculadora invalid literal for int() with base 10: 'infixcalc.py'
+2025-08-20 12:50:08,237 - ERROR - Erro ao executar a calculadora invalid literal for int() with base 10: 'infixcalc.py'
+2025-08-20 12:52:14,039 - ERROR - Erro ao executar a calculadora: invalid literal for int() with base 10: 'infixcalc.py'
+Traceback (most recent call last):
+  File "/home/hidan/Documentos/GitHub/Python_Base/Pratica/InfixCalc/infixcalc.py", line 101, in main
+    numero1, numero2 = int(sys.argv[2]), int(sys.argv[3])
+                       ~~~^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'infixcalc.py'
+2025-08-20 12:52:54,762 - ERROR - Erro ao executar a calculadora: invalid literal for int() with base 10: 'infixcalc.py'
+Traceback (most recent call last):
+  File "/home/hidan/Documentos/GitHub/Python_Base/Pratica/InfixCalc/infixcalc.py", line 101, in main
+    numero1, numero2 = int(sys.argv[2]), int(sys.argv[3])
+                       ~~~^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'infixcalc.py'
+2025-08-20 12:53:44,168 - ERROR - Erro ao executar a calculadora: invalid literal for int() with base 10: 'infix_log_error.txt'
+Traceback (most recent call last):
+  File "/home/hidan/Documentos/GitHub/Python_Base/Pratica/InfixCalc/infixcalc.py", line 101, in main
+    numero1, numero2 = int(sys.argv[2]), int(sys.argv[3])
+                       ~~~^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'infix_log_error.txt'
