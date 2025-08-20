@@ -1,5 +1,15 @@
 import sys, os
 from datetime import datetime
+import logging
+from logging import handlers
+
+def log_error():
+    path_root = os.path.join(os.path.dirname(__file__),"infix_log.txt")
+    log_formato = "%(asctime)s - %(levelname)s - %(message)s"
+    logging.basicConfig(filename=path_root, level=logging.ERROR, format=log_formato)
+    logger = handlers.RotatingFileHandler(path_root, maxBytes=1000000, backupCount=5)
+    logger.setLevel(logging.ERROR)
+    return logger
 
 class Calculadora():
     def __init__(self,operacao_user, numero1, numero2 ):
@@ -31,7 +41,7 @@ class Calculadora():
         operacao = self.operacao.get(self.operacao_usuario)
         if operacao:
             return operacao()
-        return "operacao invalida"
+        return log_error()
 
 def caminho_arquivo():
     path_root = os.path.join(os.path.dirname(__file__),"infix_log.txt")
@@ -73,8 +83,9 @@ def main():
             ver_log(caminho)
 
             
-    except Exception as e:
-        return f"Erro: {e}"    
+    except:
+        error = log_error()
+        return f"Erro: {error}"    
            
            
 if __name__ == "__main__":
