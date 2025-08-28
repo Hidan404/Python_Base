@@ -30,7 +30,7 @@ class OperacoesTabuada:
 def gerar_tabuada():
     while True:
         numero = int(input("Digite um número para gerar a tabuada (ou -1 para sair): "))
-        operacao = input("Digite a operação (somar, subtrair, multiplicar, dividir): ")
+        operacao = int(input("Digite a operação (somar, subtrair, multiplicar, dividir): "))
         if numero == -1:
             break
         op = OperacoesTabuada(numero)
