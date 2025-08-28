@@ -1,0 +1,11 @@
+maçã: fruta
+carro: veículo
+cachorro: animal
+mesa: móvel
+livro: objeto
+sol: astro
+rio: água
+computador: eletrônico
+janela: abertura
+flor: planta
+tatakai korose
