@@ -7,8 +7,9 @@ def numero_e_primo(numero):
             return False
     return True    
 
-numero = int(input("Digite o numero: "))        
-if numero_e_primo(numero):
-    print(f"Numero e primo: {numero}")    
-else:
-    print(f"Numero não e primo: {numero}")             
+numero = int(input("Digite o numero: "))       
+for i in range(0, numero):
+    if numero_e_primo(i):
+        print(f"Numero e primo: {i}")    
+    else:
+        print(f"Numero não e primo: {i}")             
