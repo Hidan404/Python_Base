@@ -7,5 +7,21 @@ estoque = {
 }
 
 
-def exibir_estoque(estoque):
+def exibir_estoque(estoque2):
     print("Estoque Da loja Atual")
+    for id, item in estoque2.items():
+        nome = item["nome"]
+        qtd = item["quantidade"]
+        preco = item["preco"]
+        print(f"Nome: {nome} | Qtd: {qtd} | Preco: {preco}")
+
+exibir_estoque(estoque)        
+
+
+def venda():
+    quantidade = int(input("Digite a quantidade de items: "))
+    produto = input("Digite o produto: ")
+
+    for id, items in estoque.items():
+        if produto == items["nome"]:
+            
