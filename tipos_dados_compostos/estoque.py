@@ -8,3 +8,4 @@ estoque = {
 
 
 def exibir_estoque(estoque):
+    print("Estoque Da loja Atual")
