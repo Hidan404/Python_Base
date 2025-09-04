@@ -15,13 +15,30 @@ def exibir_estoque(estoque2):
         preco = item["preco"]
         print(f"Nome: {nome} | Qtd: {qtd} | Preco: {preco}")
 
-exibir_estoque(estoque)        
+      
 
 
-def venda():
+def venda(estoque):
+    exibir_estoque(estoque)
+    print("\n***********************\n")
     quantidade = int(input("Digite a quantidade de items: "))
     produto = input("Digite o produto: ")
 
     for id, items in estoque.items():
         if produto == items["nome"]:
-            
+            try:
+                if quantidade <= items["quantidade"]:
+                    items["quantidade"]-= quantidade
+                    print("\n*********")
+                    print(f"Vendidos {quantidade * items["preco"]}")
+                    print("*********\n")
+
+                else:
+                    print("Quantidade fora do estoque")    
+            except Exception as e:
+                print(f"Erro : {e}")
+        print(f"Nome: {items["nome"]} | Qtd: {items["quantidade"]} | Preco: {items["preco"]}")       
+
+
+if __name__ == "__main__":
+    venda(estoque)                  
