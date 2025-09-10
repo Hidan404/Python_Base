@@ -1,0 +1,10 @@
+# cliente, quarto, dias
+ronald, 2, 5
+# cliente, quarto, dias
+Ronald, 2, 5
+# cliente, quarto, dias
+Ronald, 2, 4
+# cliente, quarto, dias
+ronald, 3, 5
+# cliente, quarto, dias
+ronald, 2, 3
