@@ -1,10 +1,9 @@
-# cliente, quarto, dias
-ronald, 2, 5
-# cliente, quarto, dias
-Ronald, 2, 5
-# cliente, quarto, dias
-Ronald, 2, 4
+
 # cliente, quarto, dias
 ronald, 3, 5
 # cliente, quarto, dias
-ronald, 2, 3
+sabrina, 4, 51
+# cliente, quarto, dias
+sabrina, 1, 18
+# cliente, quarto, dias
+hidan, 2, 7

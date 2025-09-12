@@ -35,7 +35,14 @@ def reserva_quarto():
                         break
             with open(arquivo_quartos(), 'a') as file:
                 for linha in linha_modificadas:
-                    file.write(linha)
+                    if linha.startswith(str(numero_quarto)):
+                        file.write("Ocupado" + linha[1:]
+                        )
+
+            escolha = input("Deseja fazer outra reserva? (s/n): ").strip().lower()
+            if escolha != 's':
+                print("Obrigado por usar nosso sistema de reservas!")
+                break         
           
         except Exception as e:
             print(f"Erro: {e}")
