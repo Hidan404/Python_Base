@@ -1,14 +1,15 @@
 class ContadorVogal():
-    def __init(self, frase):
+    def __init__(self, frase):
         self.frase = frase
         self.vogais = "AEIOUaeiou"
-        self.contador = 0
+        self.contador = ""
 
 
     def contar_vogal(self):
-        for letr5a in self.frase:
+        for letra in self.frase:
             if letra in self.vogais:
-                print(letra[self.contador])    
+                self.contador += letra
+        print(f"A frase '{self.frase}' tem {len(self.contador)} vogais: {self.contador}")
 
 
 if __name__ == "__main__":
