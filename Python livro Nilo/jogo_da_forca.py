@@ -85,7 +85,10 @@ class JogoDaForca():
                 else:
                     self.erros+= 1
                     print("Vc Errou")
-                    print(f"A palavra era {palavra}")
+                    if self.erros == 6:
+                        print("Vc Perdeu")
+                        print(f"A palavra era {self.listas_palvras[indice]}")
+                        break
 
             boneco_forca = self.boneco()    
             print(boneco_forca)
