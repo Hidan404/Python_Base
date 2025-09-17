@@ -1,8 +1,6 @@
 def fatorial(n):
-    fat = 1
-    while n > 1:
-        fat*= n
-        n-= 1
-    return fat
+   if n < 0 or n == 1:
+        return 1
+   return n * fatorial(n -1)     
 
 print(fatorial(10))
