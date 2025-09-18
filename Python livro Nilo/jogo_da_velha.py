@@ -9,7 +9,7 @@ def tabuleiros():
     
 
 def x_0():
-    x, o = "X
+    x, o = "X", "O"
     return x, o
 
 def jogo_da_velha():
@@ -31,7 +31,7 @@ def jogo_da_velha():
             print("Digite uma opção valida")
             continue
 
-        if jogador_inicial == "X":
+        if jogador_inicial == " X":
             jogador_inicial = jogador2
         else:
             jogador_inicial = jogador1
