@@ -1,3 +1,5 @@
+import random
+
 class JogoDaForca():
     def __init__(self):
         self.digitados = []
@@ -60,16 +62,17 @@ class JogoDaForca():
                 
 
     def main(self):
-        indice_palavra = int(input("Digite um numero: "))
-        indice = (indice_palavra * 776) % len(self.listas_palvras)
+        #indice_palavra = int(input("Digite um numero: "))
+        #indice = (indice_palavra * 776) % len(self.listas_palvras)
+        palavra_escolhida = random.choice(self.listas_palvras)
 
         while True:
             senha = ""
-            for letra in self.listas_palvras[indice]:
-                senha+= letra if letra in self.acertos else "."
+            for letra in palavra_escolhida:
+                senha += letra if letra in self.acertos else "."
             print(senha)
 
-            if senha == self.listas_palvras[indice]:
+            if senha == palavra_escolhida:
                 print(f"Vc Acertou a palavra era {senha}")
                 break
 
@@ -80,14 +83,14 @@ class JogoDaForca():
                 continue
             else:
                 self.digitados.append(tentativa)
-                if tentativa in self.listas_palvras[indice]:
+                if tentativa in palavra_escolhida:
                     self.acertos.append(tentativa)
                 else:
-                    self.erros+= 1
+                    self.erros += 1
                     print("Vc Errou")
                     if self.erros == 6:
                         print("Vc Perdeu")
-                        print(f"A palavra era {self.listas_palvras[indice]}")
+                        print(f"A palavra era {palavra_escolhida}")
                         break
 
             boneco_forca = self.boneco()    
