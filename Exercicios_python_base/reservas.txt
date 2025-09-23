@@ -7,3 +7,5 @@ sabrina, 4, 51
 sabrina, 1, 18
 # cliente, quarto, dias
 hidan, 2, 7
+ronald, 3, 10
+3, 3, 10

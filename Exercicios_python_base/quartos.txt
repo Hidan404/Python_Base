@@ -1,6 +1,6 @@
 #id, nome, preco
 1,quarto familia,200
 2,quarto solteiro,100
-3,quarto casal,150
+3, quarto casal, 150, Ocupado
 4,quarto luxo,300
 

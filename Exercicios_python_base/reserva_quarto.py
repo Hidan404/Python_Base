@@ -1,54 +1,67 @@
 import os
 
 def arquivo_quartos():
-    PATH = os.path.join(os.path.dirname(__file__), 'quartos.txt')
-    return PATH
+    return os.path.join(os.path.dirname(__file__), 'quartos.txt')
+
 def reservas():
-    PATH = os.path.join(os.path.dirname(__file__), 'reservas.txt')
-    return PATH    
+    return os.path.join(os.path.dirname(__file__), 'reservas.txt')    
 
 def reserva_quarto():
-    with open(arquivo_quartos(), 'r') as file:
-        for line in file:
-            print(line.strip())  
-
-
     while True:
+        # Mostrar quartos disponíveis
+        print("\nQuartos disponíveis:")
+        with open(arquivo_quartos(), 'r') as file:
+            for line in file:
+                print(line.strip())  
+
         try:
-            nome = input("Digite seu nome: ").strip()
+            nome = input("\nDigite seu nome: ").strip()
             numero_quarto = int(input("Digite o número do quarto que deseja reservar: ").strip())
             dias_reservados = int(input("Digite a quantidade de dias que deseja reservar: ").strip())
-            with open(reservas(), 'a') as file:
-                file.write("# cliente, quarto, dias\n")
-                file.write(f"{nome}, {numero_quarto}, {dias_reservados}\n")
 
-            linha_modificadas = []
+            # Lê os quartos e prepara atualização
+            linhas_modificadas = []
+            quarto_encontrado = False
             with open(arquivo_quartos(), 'r') as file:
                 for line in file:
-                    if line.startswith(str(numero_quarto)):
-                        _, nome_quarto, preco = line.strip().split(',')
-                        total = int(preco) * dias_reservados
-                        print(f"Reserva realizada com sucesso! {nome}, você reservou o {nome_quarto} por {dias_reservados} dias. Total a pagar: R$ {total}.")
-                        linha = "Ocupado" + line[1:]
-                        linha_modificadas.append(linha)
-                    
-                        break
-            with open(arquivo_quartos(), 'a') as file:
-                for linha in linha_modificadas:
-                    if linha.startswith(str(numero_quarto)):
-                        file.write("Ocupado" + linha[1:]
-                        )
+                    dados = line.strip().split(',')
+                    if dados[0] == str(numero_quarto):
+                        quarto_encontrado = True
+                        nome_quarto = dados[1].strip()
+                        preco = int(dados[2].strip())
 
-            escolha = input("Deseja fazer outra reserva? (s/n): ").strip().lower()
+                        # Calcula total
+                        total = preco * dias_reservados
+                        print(f"\nReserva realizada com sucesso! {nome}, você reservou o {nome_quarto} por {dias_reservados} dias. Total a pagar: R$ {total}.")
+                        
+                        # Marca quarto como ocupado
+                        linhas_modificadas.append(f"{numero_quarto}, {nome_quarto}, {preco}, Ocupado\n")
+                    else:
+                        linhas_modificadas.append(line)
+
+            if not quarto_encontrado:
+                print("❌ Quarto não encontrado!")
+                continue
+
+            # Atualiza arquivo de quartos
+            with open(arquivo_quartos(), 'w') as file:
+                file.writelines(linhas_modificadas)
+
+            # Salva reserva no arquivo (sem repetir cabeçalho)
+            if not os.path.exists(reservas()):
+                with open(reservas(), 'w') as file:
+                    file.write("# cliente, quarto, dias\n")
+            with open(reservas(), 'a') as file:
+                file.write(f"{nome}, {numero_quarto}, {dias_reservados}\n")
+
+            escolha = input("\nDeseja fazer outra reserva? (s/n): ").strip().lower()
             if escolha != 's':
                 print("Obrigado por usar nosso sistema de reservas!")
                 break         
-          
+
         except Exception as e:
             print(f"Erro: {e}")
             continue      
 
-
-
 if __name__ == "__main__":
-    reserva_quarto()           
+    reserva_quarto()
