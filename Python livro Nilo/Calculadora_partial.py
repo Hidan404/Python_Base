@@ -1,15 +1,27 @@
-import operator
+import operator, math
 from functools import partial, reduce
 
 
 def executa(operacao,simbolo,*Operandos):
-    resultado = reduce(operacao, Operandos)
-    print(f"{Operandos} {simbolo} = {resultado}")
+    try:
+        if operacao == math.sqrt and len(Operandos) == 1:
+            resultado = operacao(Operandos[0])    
+        else:    
+            resultado = reduce(operacao, Operandos)
+
+        print(f"{Operandos} {simbolo} = {resultado}")
+    except Exception as e:
+        print(f"Erro: {e}") 
+
 
 
 def operacoes():
     operacoes_ = {
-        "+": partial(executa,operator.add, "+")
+        "+": partial(executa,operator.add, "+"),
+        "-": partial(executa, operator.sub, "-"),
+        "*": partial(executa, operator.mul, "*"),
+        "/": partial(executa, operator.truediv, "/"),
+        "sqrt": partial(executa,math.sqrt, "sqrt")
     } 
 
     return operacoes_   
