@@ -11,3 +11,7 @@ def minimo(n, m):
     
 
 print(reduce(minimo, lista))
+
+
+menor = any(l == 1 for l in lista )
+print(menor)
