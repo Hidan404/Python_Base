@@ -8,42 +8,96 @@ class JogoDaForca():
         self.digitados = []
         self.erros = 0
         self.acertos = []
-        self.listas_palvras = self.ler_arquivo()
+        self.listas_palavras = self.ler_arquivo()
+        self.palavra_escolhida = ""
+        self.pontos = 0
     
     def carregar_arquivo(self):
-        caminho = os.path.join(os.path.dirname(__file__),"palavras_adivinhação.txt")
+        caminho = os.path.join(os.path.dirname(__file__), "palavras_adivinhação.txt")
         return caminho    
 
     def ler_arquivo(self):
         caminho_arquivo = self.carregar_arquivo()
         lista_palavras = []
-        with open(caminho_arquivo, "r", encoding="UTF-8") as f:
-            for l in f:
-                lista_palavras.extend(l.strip().split())
-        print(lista_palavras)
-        return lista_palavras       
+        try:
+            with open(caminho_arquivo, "r", encoding="UTF-8") as f:
+                for l in f:
+                    lista_palavras.extend(l.strip().split())
+            return lista_palavras
+        except FileNotFoundError:
+            print("Arquivo de palavras não encontrado! Usando palavras padrão.")
+            return ["python", "programacao", "computador", "jogo", "forca"]
     
-    def nomes_pontuacoes_json(self,nome_jogador, pontos, arquivo="pontuacoes.json"):
+    def obter_nome_jogador(self):
+        """
+        Obtém e confirma o nome do jogador
+        """
+        while True:
+            nome = input("\n🎮 Digite seu nome: ").strip()
+            
+            if not nome:
+                print("❌ O nome não pode estar vazio!")
+                continue
+                
+            print(f"\n📝 Nome digitado: {nome}")
+            print("1 - ✅ Confirmar e jogar")
+            print("2 - ✏️ Editar nome")
+            
+            opcao = input("Escolha: ").strip()
+            
+            if opcao == "1":
+                return nome
+            elif opcao == "2":
+                continue
+            else:
+                print("Opção inválida! Digite 1 ou 2.")
+    
+    def nomes_pontuacoes_json(self, nome_jogador, pontos, arquivo="pontuacoes.json"):
+        """
+        Salva a pontuação do jogador em JSON (CORRIGIDA)
+        """
         dados = {"nome": nome_jogador, "pontos": pontos}
         
         try:
-            with open(arquivo, "r", encoding="UTF-8") as f:
+            # Carregar pontuações existentes
+            with open(arquivo, "r", encoding="utf-8") as f:
                 lista_pontuacao = json.load(f)
-        except FileNotFoundError as f:
-            print(f"Arquivo não existe {f}")       
+        except FileNotFoundError:
+            print("Arquivo não existe. Criando novo...")
             lista_pontuacao = []
-            
+        except json.JSONDecodeError:
+            print("Arquivo corrompido. Criando nova lista...")
+            lista_pontuacao = []
         
+        # Adicionar nova pontuação à lista
+        lista_pontuacao.append(dados)
+        
+        # Salvar lista atualizada
         with open(arquivo, "w", encoding="utf-8") as f:
-            json.dump(lista_pontuacao, f, ensure_ascii=False,indent=4)
+            json.dump(lista_pontuacao, f, ensure_ascii=False, indent=4)
             
-        print(f"Dados salvos {nome_jogador}")      
+        print(f"✅ Dados salvos: {nome_jogador} - {pontos} pontos")      
         
         return dados
-           
     
-        
-        
+    def mostrar_ranking(self):
+        """
+        Mostra o ranking de pontuações
+        """
+        try:
+            with open("pontuacoes.json", "r", encoding="utf-8") as f:
+                pontuacoes = json.load(f)
+            
+            # Ordenar por pontos (maior primeiro)
+            pontuacoes.sort(key=lambda x: x["pontos"], reverse=True)
+            
+            print("\n🏆 === RANKING ===")
+            for i, jogador in enumerate(pontuacoes[:10], 1):  # Top 10
+                print(f"{i}º - {jogador['nome']}: {jogador['pontos']} pontos")
+                
+        except FileNotFoundError:
+            print("\n📊 Nenhuma pontuação registrada ainda.")
+    
     def boneco(self):
         estagios = [
             """
@@ -97,56 +151,105 @@ class JogoDaForca():
         ]
         return estagios[self.erros]
     
-    def jogador():
-        nome_jogador = input("Digite seu nome: ").strip()
-        if nome_jogador 
-           
-
-    def main(self):
-        #indice_palavra = int(input("Digite um numero: "))
-        #indice = (indice_palavra * 776) % len(self.listas_palvras)
+    def calcular_pontuacao(self):
+        """
+        Calcula a pontuação baseada no desempenho
+        """
+        # Pontuação base - penaliza erros e premia acertos
+        pontos_base = 100
+        penalidade_erros = self.erros * 10
+        bonus_letras = len(self.acertos) * 5
         
-        palavra_escolhida = random.choice(self.listas_palvras)
-        rodadas = 0
-        pontos = 0
-
+        pontuacao = max(0, pontos_base - penalidade_erros + bonus_letras)
+        return pontuacao
+    
+    def reiniciar_jogo(self):
+        """
+        Reinicia as variáveis para um novo jogo
+        """
+        self.digitados = []
+        self.erros = 0
+        self.acertos = []
+        self.palavra_escolhida = random.choice(self.listas_palavras)
+        self.pontos = 0
+    
+    def main(self):
+        print("=== JOGO DA FORCA ===")
+        
+        # Obter nome do jogador
+        nome_jogador = self.obter_nome_jogador()
+        
+        # Escolher palavra aleatória
+        self.palavra_escolhida = random.choice(self.listas_palavras).lower()
+        
+        print(f"\n🎯 Bem-vindo, {nome_jogador}!")
+        print("A palavra tem", len(self.palavra_escolhida), "letras")
+        
         while True:
-            nome_jogador = input("Digite seu nome: ").strip()
-            
-            
+            # Mostrar palavra oculta
             senha = ""
-            for letra in palavra_escolhida:
-                senha += letra if letra in self.acertos else "."
-                pontos+= 1
+            for letra in self.palavra_escolhida:
+                senha += letra if letra in self.acertos else "._"
+            
+            print(f"\nPalavra: {senha}")
+            print(f"Letras tentadas: {', '.join(self.digitados)}")
+            print(f"Erros: {self.erros}/6")
+            
+            # Verificar se ganhou
+            if all(letra in self.acertos for letra in self.palavra_escolhida):
+                self.pontos = self.calcular_pontuacao()
+                print(f"\n🎉 Parabéns! Você acertou a palavra: {self.palavra_escolhida}")
+                print(f"📊 Pontuação: {self.pontos}")
                 
-            print(senha)
-
-            if senha == palavra_escolhida:
-                print(f"Vc Acertou a palavra era {senha}")
+                # Salvar pontuação
+                self.nomes_pontuacoes_json(nome_jogador, self.pontos)
                 break
-
-            tentativa = input("Digite uma letra: ").lower().strip()
-
-            if tentativa in self.digitados:
-                print("Vc ja idgitou essa letra")
+            
+            # Tentativa do jogador
+            tentativa = input("\nDigite uma letra: ").lower().strip()
+            
+            # Validar entrada
+            if len(tentativa) != 1 or not tentativa.isalpha():
+                print("❌ Digite apenas uma letra!")
                 continue
+            
+            if tentativa in self.digitados:
+                print("❌ Você já digitou essa letra!")
+                continue
+            
+            # Processar tentativa
+            self.digitados.append(tentativa)
+            
+            if tentativa in self.palavra_escolhida:
+                self.acertos.append(tentativa)
+                print("✅ Letra correta!")
             else:
-                self.digitados.append(tentativa)
-                if tentativa in palavra_escolhida:
-                    self.acertos.append(tentativa)
-                else:
-                    self.erros += 1
-                    print("Vc Errou")
-                    if self.erros == 6:
-                        print("Vc Perdeu")
-                        print(f"A palavra era {palavra_escolhida}")
-                        break
-
-            boneco_forca = self.boneco()    
-            print(boneco_forca)
-            self.nomes_pontuacoes_json(nome_jogador,pontos)
+                self.erros += 1
+                print("❌ Letra errada!")
+                print(self.boneco())
+                
+                # Verificar se perdeu
+                if self.erros >= 6:
+                    print(f"\n💀 Game Over! A palavra era: {self.palavra_escolhida}")
+                    self.pontos = self.calcular_pontuacao()
+                    print(f"📊 Pontuação final: {self.pontos}")
+                    
+                    # Salvar pontuação mesmo perdendo
+                    self.nomes_pontuacoes_json(nome_jogador, self.pontos)
+                    break
+        
+        # Mostrar ranking
+        self.mostrar_ranking()
+        
+        # Perguntar se quer jogar novamente
+        jogar_novamente = input("\n🔄 Deseja jogar novamente? (S/N): ").strip().upper()
+        if jogar_novamente in ['S', 'SIM']:
+            self.reiniciar_jogo()
+            self.main()
+        else:
+            print("👋 Obrigado por jogar!")
 
 
 if __name__ == "__main__":
     jogo = JogoDaForca()
-    jogo.main()
+    jogo.main() 
