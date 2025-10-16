@@ -11,7 +11,7 @@ class Agenda():
     def mostra_dados(self,nome, telefone):
         print(f"Nome: {nome} - Telefone: {telefone} ")
         
-    def pede_nome_arquivo():
+    def pede_nome_arquivo(self):
         return input("Nome arquivo: ")     
     
     def pesquisa(self,nome):
