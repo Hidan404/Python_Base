@@ -15,6 +15,7 @@ class Ui(SalvarArquivos, Agenda):
             5: self.grava,
             6: self.le,
             7: self.tamanho_agenda,
+            8: self.lista_ordem,
         }
         
         return opcoes
@@ -28,6 +29,7 @@ class Ui(SalvarArquivos, Agenda):
             5 - Grava
             6 - Lê
             7 - Tamanho
+            8 - Lista em Ordem
             0 - Sai
         ''')
     
@@ -46,7 +48,7 @@ class Ui(SalvarArquivos, Agenda):
         
         while True:
             try:
-                opcao = self.validar_entrada_opcoes(0, 7)
+                opcao = self.validar_entrada_opcoes(0, 8)
                 
                 if opcao == 0:
                     print("Saindo do sistema")

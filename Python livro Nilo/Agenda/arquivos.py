@@ -11,18 +11,23 @@ class SalvarArquivos(Agenda):
      
     def le(self):
         nome_arquivo = self.pede_nome_arquivo()  
-        
-        with open(self.root_path(nome_arquivo), "r") as arquivo:
-            for a in arquivo.readlines():
-                nome, telefone  = a.strip().split("#")
-                self.agenda.append([nome, telefone])
+        try:
+            with open(self.root_path(nome_arquivo), "r") as arquivo:
+                for a in arquivo.readlines():
+                    nome, telefone  = a.strip().split("#")
+                    self.agenda.append([nome, telefone])
+        except FileNotFoundError as fnfe:
+            print(f"Erro: {fnfe}")            
     
     def grava(self):
         nome_arquivo = self.pede_nome_arquivo()
         
-        with open(self.root_path(nome_arquivo), "w") as f:
-            for a in self.agenda:
-                f.write(f"{a[0]}#{a[1]}\n")
+        try:
+            with open(self.root_path(nome_arquivo), "w") as f:
+                for a in self.agenda:
+                    f.write(f"{a[0]}#{a[1]}\n")
+        except OSError as oe:
+            print(f"Erro: {oe}")            
                 
     def tamanho_agenda(self):
         nome_arquivo = self.pede_nome_arquivo()

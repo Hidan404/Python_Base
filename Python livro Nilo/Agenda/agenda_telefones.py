@@ -56,4 +56,14 @@ class Agenda():
         print("====Agenda de Contatos====\n")
         for a in self.agenda:
             self.mostra_dados(a[0], a[1])
-        print("====Fim=====\n")            
+        print("\n====Fim=====\n")   
+        
+    def lista_ordem(self):
+        print("====Agenda de Contatos====\n")
+        agenda_ordem = sorted(self.agenda, key=lambda contato: contato[0])
+        for a in agenda_ordem:
+            self.mostra_dados(a[0], a[1])
+        print("\n====Fim=====\n")   
+    
+            
+             
