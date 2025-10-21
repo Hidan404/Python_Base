@@ -2,11 +2,23 @@ class Agenda():
     def __init__(self):
         self.agenda = []
         
-    def pede_nome(self):
-        return input("Nome: ")
+    def pede_nome(self, nome_param="Fulano"):
+        try:
+            nome = int(input("Telefone: "))
+            if len(nome) == 0:
+                return nome_param
+            return nome
+        except ValueError as v:
+            print(f"Digite somente numeros {v}")
     
-    def pede_telefone(self):
-        return input("Telefone: ")
+    def pede_telefone(self, telefone_param =111):
+        try:
+            telefone = int(input("Telefone: "))
+            if len(telefone) == 0:
+                return telefone_param
+            return telefone
+        except ValueError as v:
+            print(f"Digite somente numeros {v}")
     
     def mostra_dados(self,nome, telefone):
         print(f"Nome: {nome} - Telefone: {telefone} ")
