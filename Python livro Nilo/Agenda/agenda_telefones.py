@@ -4,21 +4,36 @@ class Agenda():
         
     def pede_nome(self, nome_param="Fulano"):
         try:
-            nome = int(input("Telefone: "))
+            nome = input("Nome: ")
             if len(nome) == 0:
                 return nome_param
             return nome
         except ValueError as v:
             print(f"Digite somente numeros {v}")
     
-    def pede_telefone(self, telefone_param =111):
-        try:
-            telefone = int(input("Telefone: "))
-            if len(telefone) == 0:
-                return telefone_param
-            return telefone
-        except ValueError as v:
-            print(f"Digite somente numeros {v}")
+    def pede_telefone(self):
+        telefones = []
+        while True:
+            tipo = input("\nTipo de telefone (Celular/Fixo/Trabalho ou Enter para terminar): ").strip().capitalize()
+            if tipo == "":
+                break
+            numero = input(f"{tipo}: ").strip()
+            if numero == "":
+                numero = "Não informado"
+            elif not numero.isdigit():
+                print("Digite somente números!")
+                continue
+            telefones.append((tipo, numero))
+        return telefones
+    
+    def pede_celular(self):
+        return self.pede_telefone("Celular", "Sem celular")
+
+    def pede_trabalho(self):
+        return self.pede_telefone("Telefone do Trabalho", "Sem trabalho")
+
+    def pede_fixo(self):
+        return self.pede_telefone("Telefone Fixo", "Sem fixo")
     
     def mostra_dados(self,nome, telefone):
         print(f"Nome: {nome} - Telefone: {telefone} ")
