@@ -1,0 +1,13 @@
+[
+    {
+        "Nome": "Ronald",
+        "Idade": 78,
+        "Altura": 1.82
+    },
+    {
+        "Nome": "ronald",
+        "Idade": 45,
+        "Altura": 1.82,
+        "Peso": 82.0
+    }
+]

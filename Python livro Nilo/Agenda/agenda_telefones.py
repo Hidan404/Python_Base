@@ -10,6 +10,14 @@ class Agenda():
             return nome
         except ValueError as v:
             print(f"Digite somente numeros {v}")
+            
+    def email(self):
+        email = input("Digite seu email:")
+        return email
+    
+    def aniversario(self):
+        aniversario = input("Digite sua data de aniversario: ")
+        return aniversario
     
     def pede_telefone(self):
         telefones = []
@@ -23,7 +31,9 @@ class Agenda():
             elif not numero.isdigit():
                 print("Digite somente números!")
                 continue
-            telefones.append((tipo, numero))
+            aniver = self.aniversario()
+            email = self.email()
+            telefones.append((tipo, numero, aniver, email))
         return telefones
     
     def pede_celular(self):
@@ -49,9 +59,16 @@ class Agenda():
             
         return None
     
+    def nome_repetido(self):
+        nome = self.pede_nome()
+        
     def novo(self):
         nome = self.pede_nome()
         telefone = self.pede_telefone()
+        
+        if self.pesquisa(nome) is not None:
+            print("Nome ja consta na lista")
+            return
         
         self.agenda.append([nome, telefone])   
         
