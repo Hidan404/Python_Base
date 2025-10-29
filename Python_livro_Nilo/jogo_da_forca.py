@@ -1,6 +1,7 @@
 import random
 import os
 import json
+import time
 
 
 class JogoDaForca():
@@ -11,6 +12,7 @@ class JogoDaForca():
         self.listas_palavras = self.ler_arquivo()
         self.palavra_escolhida = ""
         self.pontos = 0
+        
     
     def carregar_arquivo(self):
         caminho = os.path.join(os.path.dirname(__file__), "palavras_adivinhação.txt")
@@ -172,8 +174,25 @@ class JogoDaForca():
         self.acertos = []
         self.palavra_escolhida = random.choice(self.listas_palavras)
         self.pontos = 0
+
+    def cronometrar(self):
+        inicio = time.time()
+        def finalizar():
+            fim = time.time()
+            return fim - inicio
+        
+        return finalizar
+
+    def formatar_tempo(self, segundos):
+        """Converte segundos para formato minutos:segundos"""
+        minutos = int(segundos // 60)
+        segundos_rest = int(segundos % 60)
+        return f"{minutos:02d}:{segundos_rest:02d}"
     
+
     def main(self):
+        #inicio = time.time()
+        inicio = self.cronometrar()
         print("=== JOGO DA FORCA ===")
         
         # Obter nome do jogador
@@ -200,6 +219,8 @@ class JogoDaForca():
                 self.pontos = self.calcular_pontuacao()
                 print(f"\n🎉 Parabéns! Você acertou a palavra: {self.palavra_escolhida}")
                 print(f"📊 Pontuação: {self.pontos}")
+                tempo_total = inicio()
+                print(self.formatar_tempo(tempo_total))
                 
                 # Salvar pontuação
                 self.nomes_pontuacoes_json(nome_jogador, self.pontos)
@@ -233,6 +254,8 @@ class JogoDaForca():
                     print(f"\n💀 Game Over! A palavra era: {self.palavra_escolhida}")
                     self.pontos = self.calcular_pontuacao()
                     print(f"📊 Pontuação final: {self.pontos}")
+                    tempo_total = inicio()
+                    print(self.formatar_tempo(tempo_total))
                     
                     # Salvar pontuação mesmo perdendo
                     self.nomes_pontuacoes_json(nome_jogador, self.pontos)
