@@ -187,7 +187,7 @@ class JogoDaForca():
         """Converte segundos para formato minutos:segundos"""
         minutos = int(segundos // 60)
         segundos_rest = int(segundos % 60)
-        return f"{minutos:02d}:{segundos_rest:02d}"
+        return f"{minutos:02d}:{segundos_rest:02d} Segundos"
     
 
     def main(self):
@@ -220,7 +220,7 @@ class JogoDaForca():
                 print(f"\n🎉 Parabéns! Você acertou a palavra: {self.palavra_escolhida}")
                 print(f"📊 Pontuação: {self.pontos}")
                 tempo_total = inicio()
-                print(self.formatar_tempo(tempo_total))
+                print(f"Tempo de jogo: {self.formatar_tempo(tempo_total)}")
                 
                 # Salvar pontuação
                 self.nomes_pontuacoes_json(nome_jogador, self.pontos)
@@ -255,7 +255,7 @@ class JogoDaForca():
                     self.pontos = self.calcular_pontuacao()
                     print(f"📊 Pontuação final: {self.pontos}")
                     tempo_total = inicio()
-                    print(self.formatar_tempo(tempo_total))
+                    print(f"Tempo de jogo: {self.formatar_tempo(tempo_total)}")
                     
                     # Salvar pontuação mesmo perdendo
                     self.nomes_pontuacoes_json(nome_jogador, self.pontos)
