@@ -3,7 +3,17 @@ import sys
 
 
 def bytes_mb(valor):
-    return round(valor / (1024 * 1024))
+    if valor < 1024:
+        return f"{valor} B"
+    elif valor < 1024**2:
+        return f"{round(valor / 1024, 2)} KB"
+    elif valor < 1024**3:
+        return f"{round(valor / (1024**2), 2)} MB"
+    elif valor < 1024**4:
+        return f"{round(valor / (1024**3), 2)} GB"
+    else:
+        return f"{round(valor / (1024**4), 2)} TB"
+
 
 def espaco_ocupado_diretorio():
     total =0
@@ -12,7 +22,7 @@ def espaco_ocupado_diretorio():
         for nome_arquivo in arquivos:
             caminho = Path(raiz, nome_arquivo)
             if Path.exists(caminho):
-                total+= caminho.stat().st_size()
+                total+= caminho.stat().st_size
     return total  
 
 def path_script():
@@ -22,13 +32,18 @@ def path_script():
 
 def hmtl():
      caminho_arquivo = path_script()
-
+     espaco_bytes = espaco_ocupado_diretorio()
+     espaco_mb = bytes_mb(espaco_bytes)
+    
      with open(caminho_arquivo, "w", encoding="utf-8") as f:
-        f.write("<html><head><title>Relatório de Arquivos</title></head><body>")
-        f.write("<h1>Relatório de Arquivos</h1>")
-        f.write("<table border='1'><tr><th>Nome do Arquivo</th><th>Tamanho (bytes)</th></tr>")
-        for nome, tamanho, pastas  in zip(nomes, tamanhos, diretorios):
-            f.write(f"<tr><td>{nome}</td><td>{tamanho}</td><td>{pastas}</td></tr>")
+        f.write("<html><head><title>Relatório de tamanho dos arquivos</title></head><body>")
+        f.write("<h1>Relatório de Tamanho em MB</h1>")
+        f.write(f"<p>{espaco_mb}</p>")
         f.write("</table></body></html>")
 
-print(espaco_ocupado_diretorio())            
+
+def tui():
+    hmtl()        
+
+if __name__ == "__main__":
+    tui()           
