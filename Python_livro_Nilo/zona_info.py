@@ -17,4 +17,4 @@ agora_paraupebas = datetime.now(tz=tz_parauapebas)
 print(f"Agora em Parauapebas {agora_paraupebas} ")
 
 
-#melhor metodo pegar IANA oficioal e usar zoneinfo
+#melhor metodo pegar IANA oficioal e usar zoneinfoq
