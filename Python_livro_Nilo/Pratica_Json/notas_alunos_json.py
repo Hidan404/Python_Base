@@ -39,26 +39,70 @@ class GerenciadorNotas:
         # 4. Salva o dicionário completo de volta no arquivo JSON
         self.salvar_dados(dados_alunos)
         print(f"Notas adicionadas para {nome_aluno}.")
+    def alterar_mesmo_aluno(self, nome_aluno, novas_notas):
+        """Substitui todas as notas de um aluno específico."""
+        # 1. Carrega o estado atual de todos os alunos
+        dados_alunos = self.carregar_dados()
+        
+        # 2. Verifica se o aluno já existe nos dados carregados
+        if nome_aluno not in dados_alunos:
+            print(f"O aluno {nome_aluno} não existe nos registros.")
+            return
+        
+        # 3. Substitui as notas existentes pelas novas notas
+        dados_alunos[nome_aluno] = novas_notas
+        
+        # 4. Salva o dicionário completo de volta no arquivo JSON
+        self.salvar_dados(dados_alunos)
+        print(f"Notas atualizadas para {nome_aluno}.")
 
     def main(self):
-        """Loop principal para interação com o usuário."""
-        nome_entrada = input("Digite o nome do Aluno: ")
-        notas_a_adicionar = []
 
-        print(f"Adicionando notas para {nome_entrada}. Digite 4 notas:")
+        while True:
+            """Loop principal para interação com o usuário."""
+            print("\n--- Gerenciador de Notas dos Alunos ---")
+            print("Deseja altera as notas do aluno já existente? (s/n)")
+            resposta = input().strip().lower()
+            if resposta == 's':
+                nome_entrada = input("Digite o nome do Aluno: ")
+                
+                novas_notas = []
 
-        for i in range(4):
-            while True:
-                try:
-                    # Usamos f-string para indicar qual nota estamos pedindo (1, 2, 3 ou 4)
-                    nota = float(input(f"Digite a {i+1}ª nota: "))
-                    notas_a_adicionar.append(nota)
-                    break
-                except ValueError:
-                    print("Entrada inválida. Por favor, digite um número.")
-        
-        self.adicionar_notas(nome_entrada, notas_a_adicionar)
-        print("Processo concluído.")
+                print(f"Alterando notas para {nome_entrada}. Digite 4 novas notas:")
+
+                for i in range(4):
+                    while True:
+                        try:
+                            # Usamos f-string para indicar qual nota estamos pedindo (1, 2, 3 ou 4)
+                            nota = float(input(f"Digite a {i+1}ª nova nota: "))
+                            novas_notas.append(nota)
+                            break
+                        except ValueError:
+                            print("Entrada inválida. Por favor, digite um número.")
+                
+                self.alterar_mesmo_aluno(nome_entrada, novas_notas)
+
+                print("Processo concluído.")
+                continue
+            nome_entrada = input("Digite o nome do Aluno: ")
+            
+            notas_a_adicionar = []
+
+            print(f"Adicionando notas para {nome_entrada}. Digite 4 notas:")
+
+            for i in range(4):
+                while True:
+                    try:
+                        # Usamos f-string para indicar qual nota estamos pedindo (1, 2, 3 ou 4)
+                        nota = float(input(f"Digite a {i+1}ª nota: "))
+                        notas_a_adicionar.append(nota)
+                        break
+                    except ValueError:
+                        print("Entrada inválida. Por favor, digite um número.")
+            
+            self.adicionar_notas(nome_entrada, notas_a_adicionar)
+
+            print("Processo concluído.")
 
 # Exemplo de uso:
 if __name__ == "__main__":
