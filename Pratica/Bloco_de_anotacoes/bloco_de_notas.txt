@@ -1,12 +1,6 @@
+Estudar_python
+
 python
-
-bom
-python e foda demais
-
-================
-java
-
-bem
-java e top tambem
+estudando python para backend
 
 ================

@@ -12,26 +12,24 @@ class ArquivoJsonPessoa():
     
     def dados(self):
         
-        while True:
-            nome = input("Digiteum nome: ")
-            idade = int(input("Digite uma idade: "))
-            email = input("Digite um email: ")
+        
+        nome = input("Digiteum nome: ")
+        idade = int(input("Digite uma idade: "))
+        email = input("Digite um email: ")
 
-            pessoa = Pessoa(nome=nome, idade=idade, email=email)
+        pessoa = Pessoa(nome=nome, idade=idade, email=email)
 
-            print(pessoa.to_dict())
+        print(pessoa.to_dict())
 
-            return pessoa.to_dict()
+        return pessoa.to_dict()
 
 
 
     
     def salvar_arquivo(self):
-        with open(self.caminho_completo(),"w", encoding="utf-8") as f:
+        with open(self.caminho_completo(),"a", encoding="utf-8") as f:
             json.dump(self.dados(), f, indent=4, ensure_ascii=False)
             print(f"Arquivo salvo em: {self.caminho_completo()}")
-
-
 
 
 

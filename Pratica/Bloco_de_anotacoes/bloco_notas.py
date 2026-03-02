@@ -11,7 +11,7 @@ class BlocoDeNotas():
         try:
             path = os.path.join(os.path.dirname(__file__), "bloco_de_notas.txt")
             with open(path, "a") as f:
-                f.writelines([f"{self.titulo}\n\n", f"{self.tag}\n", f"{self.texto}\n" ]) 
+                f.writelines([f"{self.titulo}\n\n", f"{self.tag}\n\n", f"{self.texto}\n" ]) 
                 f.write("\n================\n")   
         except Exception as e:
             print(f"Erro : {e}")   
@@ -22,10 +22,11 @@ class BlocoDeNotas():
         try:
             path = os.path.join(os.path.dirname(__file__), "bloco_de_notas.txt")
             with open(path, "r") as f:
-                conteudo = f.read()
+                conteudo = f.read().replace("\n", " ")
                 for line in conteudo.splitlines():
                     if self.titulo in line:
-                        print(line)
+                        print(line + "\n")
+                    #print(conteudo)    
         except Exception as e:
             print(f"Erro: {e}")
 
