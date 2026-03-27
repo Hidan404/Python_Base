@@ -15,7 +15,7 @@ class Pessoa():
             raise ValueError("O nome deve ser uma string.")
         self._nome = value
 
-    @property
+    @property #property é um decorador que transforma o método em um atributo, permitindo acessar o método como se fosse um atributo normal.
     def idade(self):
         return self._idade
 
@@ -25,8 +25,12 @@ class Pessoa():
             raise ValueError("A idade deve ser um inteiro.")
         self._idade = value
 
+class Aluno(Pessoa):
+    def __init__(self, nome, idade, matricula):
+        super().__init__(nome, idade)
+        self.matricula = matricula
 
-
-pessoa1 = Pessoa("João", 30)
-print(pessoa1.nome)  # Output: João
-print(pessoa1.idade)  # Output: 30       
+aluno1 = Aluno("Maria", 20, "12345")
+print(aluno1.nome)  # Output: Maria
+print(aluno1.idade)  # Output: 20
+print(aluno1.matricula)  # Output: 12345

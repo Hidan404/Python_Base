@@ -3,3 +3,18 @@ Time: 20:21
 Phone Number: +5511991444502
 Message: Olá, este é um Bot Whatsapp Python!
 --------------------
+Date: 16/3/2026
+Time: 20:50
+Phone Number: +5511991444502
+Message: Olá, este é um Bot Whatsapp Python!
+--------------------
+Date: 16/3/2026
+Time: 20:55
+Phone Number: +5594991444502
+Message: Olá, este é um Bot Whatsapp Python!
+--------------------
+Date: 16/3/2026
+Time: 20:57
+Phone Number: +559491121520
+Message: Olá, este é um Bot Whatsapp Python!
+--------------------
