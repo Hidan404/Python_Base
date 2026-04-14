@@ -13,5 +13,10 @@ class ContaPoupanca(Conta):
         if valor <= self.saldo:
             self.saldo-= valor
         else:
-            print("valor esta acima do saldo")   
+            print("valor esta acima do saldo")  
+            
+
+    def transferir(self,valor,conta_destino):
+        transferencia = self.saldo - valor
+        conta_destino.saldo+= transferencia      
              

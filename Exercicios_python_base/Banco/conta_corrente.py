@@ -18,3 +18,9 @@ class ContaCorrente(Conta):
             self.saldo-= valor
         else:
             print("Não pode sacar") 
+
+    def transferir(self,valor,conta_destino):
+        transferencia = self.saldo - valor
+        conta_destino.saldo+= transferencia 
+
+                
