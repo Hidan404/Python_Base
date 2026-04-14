@@ -18,10 +18,10 @@ class Conta(ABC):
     @abstractmethod
     def sacar(self, valor: int):
         pass
-
-    def transferir(self, valor: int, conta_destino):
-        if self.sacar(valor):
-            conta_destino.depositar(valor)
+    
+    @abstractmethod
+    def transferir(self):
+        pass
 
 
     def status(self):
