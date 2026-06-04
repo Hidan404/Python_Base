@@ -7,5 +7,6 @@ def listar_dir_atual():
     return os.listdir(path_root())
 
 print(listar_dir_atual())
+print(path_root())
     
     

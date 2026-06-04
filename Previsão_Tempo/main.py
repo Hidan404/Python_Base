@@ -35,5 +35,5 @@ def clima():
         print("Arquivo não encontrado.")
 
 
-clima()        
+clima()
 
