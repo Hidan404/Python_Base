@@ -1,17 +1,32 @@
 [
     {
-        "cep": "01001-000",
-        "logradouro": "Praça da Sé",
-        "complemento": "lado ímpar",
+        "cep": "68312-246",
+        "logradouro": "Rua Acerola",
+        "complemento": "",
         "unidade": "",
-        "bairro": "Sé",
-        "localidade": "São Paulo",
-        "uf": "SP",
-        "estado": "São Paulo",
-        "regiao": "Sudeste",
-        "ibge": "3550308",
-        "gia": "1004",
-        "ddd": "11",
-        "siafi": "7107"
+        "bairro": "Brasília",
+        "localidade": "Parauapebas",
+        "uf": "PA",
+        "estado": "Pará",
+        "regiao": "Norte",
+        "ibge": "1505536",
+        "gia": "",
+        "ddd": "94",
+        "siafi": "0595"
+    },
+    {
+        "cep": "68315-201",
+        "logradouro": "Rua Açucena",
+        "complemento": "",
+        "unidade": "",
+        "bairro": "Cidade Jardim",
+        "localidade": "Parauapebas",
+        "uf": "PA",
+        "estado": "Pará",
+        "regiao": "Norte",
+        "ibge": "1505536",
+        "gia": "",
+        "ddd": "94",
+        "siafi": "0595"
     }
 ]
