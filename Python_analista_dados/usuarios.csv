@@ -1,0 +1,22 @@
+id,nome,email,telefone,cidade,estado,idade,cargo,status
+1,Ana Souza,ana.souza@email.com,94991112233,Parauapebas,PA,28,Analista de Suporte,Ativo
+2,Carlos Lima,carlos.lima@email.com,94992223344,Maraba,PA,35,Tecnico de TI,Ativo
+3,Juliana Santos,juliana.santos@email.com,94993334455,Canaa dos Carajas,PA,31,Desenvolvedora Junior,Ativo
+4,Marcos Oliveira,marcos.oliveira@email.com,94994445566,Parauapebas,PA,42,Administrador de Redes,Inativo
+5,Fernanda Rocha,fernanda.rocha@email.com,94995556677,Belem,PA,26,Analista de Sistemas,Ativo
+7,Patricia Alves,patricia.alves@email.com,94997778899,Parauapebas,PA,29,Analista de Dados,Ativo
+8,Gabriel Costa,gabriel.costa@email.com,94998889900,Maraba,PA,24,Estagiario de TI,Ativo
+9,Vanessa Martins,vanessa.martins@email.com,94999990011,Belem,PA,33,QA Tester,Ativo
+10,Lucas Pereira,lucas.pereira@email.com,94990001122,Parauapebas,PA,27,Desenvolvedor Backend,Ativo
+11,Rafael Mendes,rafael.mendes@email.com,94991110022,Redencao,PA,39,Analista de Infraestrutura,Ativo
+12,Bruna Castro,bruna.castro@email.com,94992220033,Parauapebas,PA,30,Suporte Tecnico,Ativo
+13,Diego Ferreira,diego.ferreira@email.com,94993330044,Maraba,PA,41,Coordenador de TI,Ativo
+14,Carla Nunes,carla.nunes@email.com,94994440055,Canaa dos Carajas,PA,25,Desenvolvedora Frontend,Ativo
+15,Tiago Silva,tiago.silva@email.com,94995550066,Parauapebas,PA,34,Administrador de Banco de Dados,Ativo
+16,Renata Barbosa,renata.barbosa@email.com,94996660077,Belem,PA,28,Analista de BI,Ativo
+17,Anderson Melo,anderson.melo@email.com,94997770088,Maraba,PA,36,Engenheiro de Software,Ativo
+18,Amanda Ribeiro,amanda.ribeiro@email.com,94998880099,Parauapebas,PA,23,Estagiaria de Desenvolvimento,Ativo
+19,Leonardo Araujo,leonardo.araujo@email.com,94999990110,Imperatriz,MA,45,Gerente de TI,Ativo
+20,Sabrina Freitas,sabrina.freitas@email.com,94990001221,Parauapebas,PA,32,Analista de Suporte,Inativo
+21,hidan,hidan@gmail.com,11111111,parauapebas,para,23,membro da akatsuki,ativo
+23,konan,konan@gmail.com,454565565464564,papel,pain,27,membro da akatsuki,ativo
