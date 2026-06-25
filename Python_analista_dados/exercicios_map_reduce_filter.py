@@ -29,7 +29,7 @@ def abrir_arquivo_passar_lista():
 
 valor_emprerstimos = abrir_arquivo_passar_lista()
 retorna_valor_emprestimos = map(lambda emp: float(emp["valor_emprestimos"]), valor_emprerstimos)
-print(list(retorna_valor_emprestimos))
 
 valor_emprestimos_lista_filtrada = filter(lambda positivo: positivo > 0, retorna_valor_emprestimos)
-print(list(valor_emprestimos_lista_filtrada))
+soma_emprestimos = reduce(lambda x, y: x + y, valor_emprestimos_lista_filtrada)
+print(round(soma_emprestimos,2))
