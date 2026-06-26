@@ -1,0 +1,2 @@
+
+teste.limpar_arquivo()   
