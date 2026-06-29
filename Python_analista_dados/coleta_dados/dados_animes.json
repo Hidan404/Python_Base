@@ -6,5 +6,13 @@
         "rank": 48,
         "status": "Finished Airing",
         "title": "Cowboy Bebop"
+    },
+    {
+        "id": 5,
+        "episodios": 1,
+        "score": 8.38,
+        "rank": 243,
+        "status": "Finished Airing",
+        "title": "Cowboy Bebop: Tengoku no Tobira"
     }
 ]

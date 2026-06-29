@@ -407,9 +407,6 @@ def main():
     print("🔍 Porta 554 - Câmeras IP")
     print("=" * 70)
     print("\n⚠️  AVISO LEGAL:")
-    print("   • Use APENAS em redes com autorização por escrito")
-    print("   • O uso de Tor para escanear sem permissão é ILEGAL")
-    print("   • Este script é para fins educacionais e de pentest autorizado")
     print("=" * 70)
     
     # Verifica se Tor está instalado
