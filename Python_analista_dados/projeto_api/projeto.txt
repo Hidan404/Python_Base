@@ -1,0 +1,52 @@
+Este é um projeto excelente para portfólio. Para um gerenciador de senhas, a **segurança** é a prioridade número um. Vamos utilizar a biblioteca `cryptography` (Fernet) para criptografia simétrica e o `SQLite` para o banco de dados.
+
+---
+
+### 1. Planejamento do Projeto
+
+#### Fase 1: Arquitetura e Segurança
+*   **Segurança:** A chave de criptografia será gerada uma vez e deve ser armazenada de forma segura (usaremos um arquivo `.key` local).
+*   **BD:** SQLite (leve e embutido no Python).
+*   **Interface:** Streamlit (focado em formulários e tabelas).
+
+#### Fase 2: Estrutura do Banco de Dados
+*   Tabela `senhas`: `id` (PK), `servico`, `usuario`, `senha_criptografada` (BLOB/TEXT).
+
+#### Fase 3: Funcionalidades
+1.  **Login Mestre:** Uma senha mestre para acessar o cofre.
+2.  **CRUD:** Adicionar, listar (com botão de revelar/copiar) e excluir senhas.
+3.  **Gerador de Senhas:** Uma pequena ferramenta para criar senhas aleatórias.
+
+---
+
+### 2. O Prompt para Geração da Aplicação (Passo a Passo)
+
+Como o Streamlit é um framework de execução de script linear, é melhor pedir a construção modular. Copie e cole os prompts abaixo na ordem:
+
+#### Etapa 1: Estrutura e Segurança
+> "Crie um projeto Python utilizando Streamlit. Primeiro, crie um módulo chamado `security.py` que contenha funções para: 1) Gerar uma chave de criptografia (se não existir, criar um arquivo 'secret.key'). 2) Funções `encrypt(data)` e `decrypt(data)` usando a biblioteca `cryptography.fernet`."
+
+#### Etapa 2: Banco de Dados
+> "Agora, crie um arquivo `database.py`. Ele deve conter funções usando a biblioteca `sqlite3` para: 1) Criar uma tabela chamada 'cofre' com as colunas id, servico, usuario e senha_encriptada. 2) Função `add_password(servico, usuario, senha_encriptada)`. 3) Função `get_all_passwords()`."
+
+#### Etapa 3: Interface (App Principal)
+> "Agora crie o `app.py` com Streamlit. A interface deve ter:
+> 1. Uma barra lateral para inserir novo serviço, usuário e senha.
+> 2. O campo de senha deve ser um `st.text_input` com `type='password'`.
+> 3. Ao salvar, a senha deve ser criptografada via `security.py` antes de ir para o banco.
+> 4. Na página principal, exiba uma tabela com as senhas salvas.
+> 5. Adicione um botão 'Revelar' em cada linha que chama a função de decriptação apenas quando clicado."
+
+#### Etapa 4: Refinamento (Opcional)
+> "Adicione uma camada de autenticação ao `app.py`: crie uma 'Senha Mestre'. O app só deve mostrar a interface de senhas após o usuário inserir a senha mestre correta (a senha mestre deve ser comparada com um hash ou valor armazenado com segurança)."
+
+---
+
+### Dicas de Ouro para este projeto:
+
+1.  **Nunca** versionar o arquivo `secret.key` no GitHub. Adicione-o ao seu `.gitignore`.
+2.  **Hashing:** Para a senha mestre, não salve-a em texto puro. Use a biblioteca `bcrypt` para salvar o hash da senha mestre no banco de dados.
+3.  **Clipboard:** Use a biblioteca `pyperclip` para permitir que o usuário copie a senha revelada para a área de transferência com um clique.
+4.  **UX:** O Streamlit recarrega a página ao interagir com widgets. Lembre-se de usar `st.session_state` para manter o estado da "sessão de login" ativa enquanto o usuário navega.
+
+**Deseja que eu escreva o código de alguma dessas etapas agora?** Se sim, me confirme por qual etapa quer começar!

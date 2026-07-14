@@ -28,5 +28,35 @@
         "gia": "",
         "ddd": "94",
         "siafi": "0595"
+    },
+    {
+        "cep": "68515-000",
+        "logradouro": "",
+        "complemento": "",
+        "unidade": "",
+        "bairro": "",
+        "localidade": "Parauapebas",
+        "uf": "PA",
+        "estado": "Pará",
+        "regiao": "Norte",
+        "ibge": "1505536",
+        "gia": "",
+        "ddd": "94",
+        "siafi": "0595"
+    },
+    {
+        "cep": "68318-133",
+        "logradouro": "Travessa Abraão",
+        "complemento": "",
+        "unidade": "",
+        "bairro": "Habitar Feliz",
+        "localidade": "Parauapebas",
+        "uf": "PA",
+        "estado": "Pará",
+        "regiao": "Norte",
+        "ibge": "1505536",
+        "gia": "",
+        "ddd": "94",
+        "siafi": "0595"
     }
 ]

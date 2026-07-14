@@ -1,0 +1,101 @@
+﻿id,nome,idade,salario,data_admissao,departamento,projetos,avaliacao,bonus,observacoes
+43,Juliana Costa,58,5832.1,2024-11-15,Marketing,8.0,4.3,TRUE,Funcionário destaque
+42,Maria Oliveira,29,4439.84,07-13-2019,TI,0.0,1.1,,Precisa de treinamento
+92,Diego Martins,22,10882.68,09-04-2020,Operações,6.0,7.6,,
+10,Felipe Azevedo,45,10484.99,2018-04-19,Financeiro,4.0,4.8,TRUE,
+66,Juliana Costa,34,6590.93,17/08/2023,Marketing,0.0,2.3,Sim,
+51,João Pereira,26,5506.3,12-19-2020,Logística,13.0,1.0,FALSE,
+2,Carlos Souza,43,3983.42,2025-03-14,Marketing,2.0,8.6,Sim,
+71,Maria Oliveira,37,7370.77,31/02/2023,Financeiro,14.0,7.0,,Observação com çãé
+16,Lucas Mendes,25,7879.76,19/01/2018,Logística,1.0,0.8,1,Funcionário destaque
+79,Patricia Nunes,150,6773.02,05-07-2023,Marketing,4.0,3.0,,
+74,Patricia Nunes,26,7552.96,08/02/2023,Financeiro,9.0,9.9,Sim,
+11,Carlos Souza,30,11007.41,05-10-2020,RH,8.0,2.5,Sim,Observação com çãé
+56,Joao Pereira,30,5357.6,2024-09-01,Operações,1.0,5.8,Talvez,Precisa de treinamento
+57,João Pereira,35,9002.4,2024-10-24,Marketing,5.0,0.2,TRUE,Observação com çãé
+73,Paulo Santos,28,3348.52,12/08/2021,Logística,0.0,4.0,Sim,Precisa de treinamento
+46,Tatiana Cardoso,56,3248.4,31/02/2023,TI,10.0,9.8,1,
+49,Ana Silva,56,11462.37,2021-06-14,RH,3.0,3.0,FALSE,Precisa de treinamento
+93,Juliana Costa,46,11125.25,2022-07-18,Marketing,10.0,4.4,FALSE,Funcionário destaque
+77,Lucas Mendes,43,11568.0,2022-04-26,Vendas,15.0,7.7,0,Observação com çãé
+38,Paulo Santos,22,10743.97,04-06-2024,Vendas,3.0,8.0,1,Observação com çãé
+31,Tatiana Cardoso,57,4432.42,2025-05-25,RH,15.0,2.7,TRUE,Precisa de treinamento
+22,Marcelo Ribeiro,31,9245.55,14/07/2019,Financeiro,13.0,7.7,Sim,
+33,Ana Silva,41,10681.03,09-24-2024,TI,15.0,20.0,0,Observação com çãé
+97,Larissa Castro,-5,8327.03,2019-11-14,Marketing ,12.0,4.5,FALSE,Observação com çãé
+81,Maria Oliveira,-5,1000000.0,2018-01-08,TI,4.0,1.1,FALSE,Precisa de treinamento
+50,Rodrigo Barros,29,4473.89,05-19-2018,Financeiro,-3.0,1.0,,
+84,Patricia Nunes,44,1000000.0,28/01/2023,Vendas,11.0,8.3,FALSE,
+27,Camila Rocha,56,7183.86,2022-06-28,Vendas,14.0,4.6,FALSE,Observação com çãé
+88,Ricardo Alves,44,6063.05,09-01-2022,Vendas,13.0,7.6,0,Observação com çãé
+34,Maria Oliveira,47,5755.85,17/09/2025,Operações,11.0,2.7,Sim,Precisa de treinamento
+9,Marcelo Ribeiro,33,9647.44,2022-02-27,RH,0.0,,1,Funcionário destaque
+48,Felipe Azevedo,22,7224.57,09/01/2020,Vendas,2.0,6.9,,Precisa de treinamento
+60,Paulo Santos,48,10116.67,15/08/2024,Financeiro,1.0,7.4,Não,Precisa de treinamento
+64,Ricardo Alves,150,6676.66,2025-05-02,RH,-3.0,9.2,0,Funcionário destaque
+75,Marcelo Ribeiro,31,10439.68,05-20-2020,RH,14.0,7.0,1,Observação com çãé
+45,João Pereira,42,3232.78,27/11/2018,Logística,15.0,4.4,1,Observação com çãé
+99,Felipe Azevedo,43,3941.4,16/12/2024,Financeiro,1.0,3.1,,
+53,Ana Silva,56,3487.84,2025-11-15,TI,9.0,7.0,0,Funcionário destaque
+86,Lucas Mendes,57,5022.31,08-04-2019,Financeiro,9.0,2.7,FALSE,
+13,Juliana Costa,54,-1000.0,2023-09-09,RH,15.0,4.5,TRUE,
+37,Bruna Ferreira,37,5102.06,24/06/2018,Logística,4.0,0.4,1,
+24,Larissa Castro,150,6689.81,16/02/2020,Operações,2.0,8.5,FALSE,Observação com çãé
+40,João Pereira,37,11288.36,07-04-2019,Vendas,9.0,0.5,TRUE,Observação com çãé
+41,Tatiana Cardoso,33,3710.72,2021-08-19,Operações,8.0,9.0,TRUE,Funcionário destaque
+19,Rafael Barbosa,41,6818.78,13/04/2022,Financeiro,9.0,3.0,0,
+67,João Pereira,53,11126.41,26/10/2021,Marketing,4.0,9.0,TRUE,
+62,Fernanda Lima,40,6739.53,17/09/2023,RH,15.0,3.0,,
+62,Fernanda Lima,40,6739.53,17/09/2023,RH,15.0,3.0,,DUPLICADA
+8,Marcelo Ribeiro,36,8718.64,2022-11-14,Vendas,15.0,2.3,FALSE,
+35,Fernanda Lima,28,8540.87,23/01/2022,Financeiro,11.0,6.9,0,Observação com çãé
+100,Carlos Souza,51,4908.95,26/01/2018,Marketing,-3.0,5.9,Não,Funcionário destaque
+47,Rodrigo Barros,31,7861.94,2019-11-28,RH,7.0,0.2,Não,
+3,Maria Oliveira,45,3981.49,12-26-2018,Financeiro,,8.5,Sim,Observação com çãé
+52,Maria Oliveira,-5,8618.86,07-20-2023,TI,3.0,1.1,,Funcionário destaque
+17,Paulo Santos,51,9566.51,09/11/2023,Operações,2.0,0.9,0,Funcionário destaque
+39,Patricia Nunes,57,4100.08,02/12/2024,RH,6.0,4.8,TRUE,Precisa de treinamento
+39,Patricia Nunes,57,4100.08,02/12/2024,RH,6.0,4.8,TRUE,DUPLICADA
+69,Ana Silva,55,6778.49,24/05/2023,TI,1.0,,TRUE,Observação com çãé
+23,Larissa Castro,35,4024.36,11-22-2022,Operações,7.0,20.0,Não,Precisa de treinamento
+63,Carlos Souza,49,6421.87,31/02/2023,Vendas,2.0,5.8,0,Precisa de treinamento
+25,Ana Silva,32,8563.13,2023-02-14,TI,2.0,3.1,TRUE,
+6,Carlos Souza,34,6144.38,2020-04-04,Marketing,2.0,7.7,,
+7,Patricia Nunes,42,8644.96,08-15-2019,RH,11.0,3.1,Sim,Precisa de treinamento
+68,Maria Oliveira,54,8222.96,08-26-2018,RH,4.0,4.5,,
+83,Ricardo Alves,50,7716.62,10/06/2023,RH,1.0,,1,Precisa de treinamento
+20,Rodrigo Barros,43,8972.51,11-23-2022,TI,2.0,3.8,,
+80,Diego Martins,23,4622.37,2025-04-08,RH,3.0,5.4,Talvez,Precisa de treinamento
+44,Rodrigo Barros,46,4627.61,2020-12-15,Operações,14.0,7.5,Não,Precisa de treinamento
+91,Felipe Azevedo,34,11524.17,25/05/2025,Financeiro,6.0,1.4,0,Precisa de treinamento
+21,Carlos Souza,55,5565.57,2022-08-17,Vendas,7.0,8.8,FALSE,
+1,Amanda Gomes,45,5868.16,2023-03-05,Logística,4.0,4.7,Talvez,Funcionário destaque
+96,Marcelo Ribeiro,60,4000.68,2022-02-02,Logística,2.0,9.1,Sim,
+58,Fernanda Lima,22,5165.08,2019-09-12,TI,0.0,4.7,TRUE,
+58,Fernanda Lima,22,5165.08,2019-09-12,TI,0.0,4.7,TRUE,DUPLICADA
+54,Juliana Costa,34,5840.36,31/02/2023,Operações,11.0,0.5,TRUE,Precisa de treinamento
+90,Amanda Gomes,46,4681.35,2023-09-09,Vendas,5.0,3.2,0,Observação com çãé
+26,Diego Martins,50,3381.2,14/10/2023,Logística,2.0,4.1,0,
+72,Rodrigo Barros,150,5123.96,2023-07-19,Operações,11.0,7.6,1,Precisa de treinamento
+85,Paulo Santos,23,7491.4,25/05/2019,Marketing,9.0,10.0,Não,Observação com çãé
+85,Paulo Santos,23,7491.4,25/05/2019,Marketing,9.0,10.0,Não,DUPLICADA
+65,Marcelo Ribeiro,51,7964.82,10/02/2019,Operações,13.0,8.2,TRUE,Observação com çãé
+30,Tatiana Cardoso,57,4637.67,2024-09-28,TI,5.0,9.3,1,
+28,Marcelo Ribeiro,41,3840.86,03-22-2020,TI,1.0,-2.0,,Funcionário destaque
+89,Diego Martins,23,8644.48,08-08-2022,Financeiro,1.0,4.2,TRUE,Precisa de treinamento
+98,Bruna Ferreira,44,4176.9,08/06/2019,Financeiro,,8.6,,Precisa de treinamento
+5,Bruna Ferreira,32,7632.52,2022-08-01,TI,7.0,20.0,1,Observação com çãé
+55,Ana Silva,49,5380.26,02/06/2024,TI,,7.6,1,
+76,Carlos Souza,43,6290.46,31/02/2023,Operações,15.0,1.5,Não,
+12,Amanda Gomes,41,7565.83,19/12/2025,Vendas,3.0,5.8,0,
+70,Camila Rocha,59,9492.6,09-21-2020,Logística,-3.0,1.9,FALSE,Funcionário destaque
+87,Rodrigo Barros,25,7668.15,13/09/2025,Financeiro,10.0,6.8,0,Precisa de treinamento
+14,Juliana Costa,39,5023.8,2022-05-23,Financeiro,11.0,9.3,TRUE,
+18,Amanda Gomes,31,5588.67,21/08/2023,Marketing,8.0,7.0,1,Funcionário destaque
+29,Tatiana Cardoso,-5,5972.64,2020-01-18,Financeiro,6.0,2.9,Sim,
+32,Paulo Santos,24,4575.58,27/01/2020,Marketing,9.0,0.1,Sim,Precisa de treinamento
+36,Marcelo Ribeiro,30,7212.19,06-06-2019,RH,0.0,7.9,,
+95,Amanda Gomes,54,6607.5,31/02/2023,Financeiro,8.0,3.0,Sim,Precisa de treinamento
+4,João Pereira,51,6648.75,12-04-2022,RH,7.0,1.3,0,Precisa de treinamento
+15,Marcelo Ribeiro,56,10430.43,09-15-2019,Vendas,-3.0,5.7,TRUE,Observação com çãé
+15,Marcelo Ribeiro,56,10430.43,09-15-2019,Vendas,-3.0,5.7,TRUE,DUPLICADA
