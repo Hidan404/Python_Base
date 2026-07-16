@@ -22,8 +22,13 @@ class ExtrairTextoPDF:
     
     def salvar_ceps_txt(self):
         ceps = self.extrair_texto()
+        caminho_salvar = Path(__file__).parent.resolve() / "texto_ceps.txt"
+        with open(caminho_salvar, "w", encoding="utf-8") as arquivo:
+            for c in ceps:
+                arquivo.writelines(f"{c}\n")
             
 
 
 ceps = ExtrairTextoPDF()
-ceps.extrair_texto()            
+ceps.extrair_texto()  
+ceps.salvar_ceps_txt()          
