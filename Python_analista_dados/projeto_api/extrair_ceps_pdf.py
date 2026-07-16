@@ -18,7 +18,10 @@ class ExtrairTextoPDF:
         
             lista_ceps = [cep for cep in texto if padrao_cep.match(cep)]
 
-        print(lista_ceps)    
+        return lista_ceps
+    
+    def salvar_ceps_txt(self):
+        ceps = self.extrair_texto()
             
 
 
