@@ -7,7 +7,7 @@ load_dotenv()
 
 def salvar_resposta(msg):
     caminho = Path(__file__).parent.resolve() / "resposta_chatbot.txt"
-    with open(caminho, "w", encoding="utf-8") as arquivo:
+    with open(caminho, "a", encoding="utf-8") as arquivo:
         arquivo.write(msg)
 
 def chatbot():

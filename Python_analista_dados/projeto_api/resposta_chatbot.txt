@@ -1,0 +1,109 @@
+Em Python, um **dicionário** (`dict`) é uma coleção **mutável**, **ordenada** (a partir do Python 3.7+) e **indexada por chaves** (keys), não por números. Ele funciona no formato de par **chave: valor**.
+
+---
+
+### 1. Criação de um Dicionário
+```python
+# Usando chaves
+pessoa = {"nome": "Alice", "idade": 25, "cidade": "São Paulo"}
+
+# Usando o construtor dict()
+carro = dict(marca="Toyota", modelo="Corolla", ano=2020)
+```
+
+---
+
+### 2. Operações Executáveis (CRUD)
+
+#### A. Acesso aos valores
+```python
+print(pessoa["nome"])      # Alice
+print(pessoa.get("idade")) # 25 (o método .get é mais seguro, pois não dá erro se a chave não existir)
+```
+
+#### B. Adicionar ou Alterar
+```python
+# Adicionar um novo par
+pessoa["profissao"] = "Engenheira"
+
+# Alterar um valor existente
+pessoa["idade"] = 26
+```
+
+#### C. Remover itens
+```python
+# Remove a chave especificada
+del pessoa["cidade"]
+
+# Remove e retorna o valor
+prof = pessoa.pop("profissao")
+
+# Remove o último item inserido (Python 3.7+)
+pessoa.popitem()
+```
+
+#### D. Verificação de existência
+```python
+if "nome" in pessoa:
+    print("A chave 'nome' existe!")
+```
+
+---
+
+### 3. Como percorrer (Iterar) um Dicionário
+
+Existem várias formas de percorrer um dicionário dependendo do que você precisa:
+
+#### A. Percorrer apenas as chaves (padrão)
+```python
+for chave in pessoa:
+    print(chave)
+```
+
+#### B. Percorrer os valores (`.values()`)
+```python
+for valor in pessoa.values():
+    print(valor)
+```
+
+#### C. Percorrer chaves e valores simultaneamente (`.items()`)
+Esta é a forma mais comum e útil:
+```python
+for chave, valor in pessoa.items():
+    print(f"{chave}: {valor}")
+```
+
+---
+
+### 4. Métodos Úteis
+
+| Método | Descrição |
+| :--- | :--- |
+| `dicionario.keys()` | Retorna uma lista com todas as chaves. |
+| `dicionario.values()` | Retorna uma lista com todos os valores. |
+| `dicionario.items()` | Retorna uma lista de tuplas (chave, valor). |
+| `dicionario.update(novo_dict)` | Atualiza o dicionário com pares de outro dicionário. |
+| `dicionario.clear()` | Remove todos os itens do dicionário. |
+| `dicionario.copy()` | Cria uma cópia rasa do dicionário. |
+
+---
+
+### Exemplo Prático Completo
+Imagine um sistema simples de estoque:
+
+```python
+estoque = {"maçã": 10, "banana": 5, "laranja": 8}
+
+# Adicionar produto
+estoque["uva"] = 12
+
+# Venda (diminuir quantidade)
+estoque["maçã"] -= 2
+
+# Exibir relatório
+print("Relatório de Estoque:")
+for fruta, qtd in estoque.items():
+    print(f"- {fruta.capitalize()}: {qtd} unidades")
+```
+
+**Dica importante:** As chaves de um dicionário devem ser **objetos imutáveis** (como strings, números ou tuplas), enquanto os valores podem ser qualquer tipo de dado (incluindo listas ou outros dicionários).
