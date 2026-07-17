@@ -1,0 +1,1 @@
+['o que mensageria em programção?', 'o que é materia escura?', 'qual o framework mais completo em python?']
