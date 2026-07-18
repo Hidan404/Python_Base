@@ -1,0 +1,10 @@
+Perguntas,Respostas
+o que mensageria em programção?,"**Mensageria** é a troca de dados entre sistemas ou serviços de forma assíncrona, utilizando uma ""fila"" (broker) como intermediário para que eles se comuniquem sem depender um do outro em tempo real."
+o que é materia escura?,"Matéria escura é uma forma invisível de matéria que não emite luz, mas exerce **atração gravitacional**, mantendo as galáxias unidas."
+qual o framework mais completo em python?,"Não existe um único ""mais completo"", pois depende do objetivo:
+
+*   **Desenvolvimento Web:** **Django** (é o mais ""bateria inclusa"").
+*   **Ciência de Dados/IA:** **PyTorch** ou **TensorFlow** (ecossistemas vastos).
+*   **APIs Rápidas:** **FastAPI** (moderno e robusto).
+
+**Resumo:** Se busca tudo pronto em um só pacote, o **Django** é a resposta."
