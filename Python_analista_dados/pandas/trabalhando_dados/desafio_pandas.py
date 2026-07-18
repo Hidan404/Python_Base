@@ -41,5 +41,6 @@ print(df["reviewerName"])
 def classificar_sentimento():
     modelo = "gemini-3.1-flash-lite"
     cliente = genai.Client(api_key=os.getenv("CHAVE_APY"))
+    print(cliente)
 
 
