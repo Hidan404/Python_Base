@@ -44,3 +44,6 @@ def classificar_sentimento():
     print(cliente)
 
 
+classificar_sentimento()    
+
+
