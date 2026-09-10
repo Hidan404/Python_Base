@@ -1,5 +1,5 @@
 frase = "ACDTTTAPII"
-contador = 0
+
 frase_dict = {}
 
 for f in frase:
