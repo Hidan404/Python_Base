@@ -1,0 +1,16 @@
+
+MÊS/ANO: outubro/2026
+Salário Líquido: R$ 2735.00
+Dinheiro Separado (Poupança): R$ 450.00
+--- Detalhamento dos Gastos ---
+  - Aluguel: R$ 700.00
+  - Alimentação: R$ 300.00
+  - Energia Elétrica (Luz): R$ 260.00
+  - Internet Fixa: R$ 150.00
+  - Moto (Gasolina/Manutenção): R$ 130.00
+  - Reserva do Gás: R$ 30.00
+  - Cartao credito: R$ 340.00
+Total de Gastos: R$ 1910.00
+SALDO LIVRE RESTANTE: R$ 375.00
+
+========================================
