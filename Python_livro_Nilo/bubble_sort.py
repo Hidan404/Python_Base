@@ -4,11 +4,12 @@ def bubble_sort(lista: list) -> list:
 
 	for fim in range(len(resultado) - 1, 0, -1):
 		trocou = False
-		for indice in range(fim):
-			if resultado[indice] > resultado[indice + 1]:
-				resultado[indice], resultado[indice + 1] = (
+		for indice in range(fim ):
+			indice_negativo = indice - len(resultado)
+			if resultado[indice_negativo] > resultado[indice + 1]:
+				resultado[indice_negativo], resultado[indice + 1] = (
 					resultado[indice + 1],
-					resultado[indice],
+					resultado[indice_negativo],
 				)
 				trocou = True
 		if not trocou:
@@ -17,6 +18,15 @@ def bubble_sort(lista: list) -> list:
 	return resultado
 
 
-lista = [8, 9, 1, 7, 3]
-bubble_sort(lista)
+lista = [8, 9, 1, 1 ,7, 3]
+print(bubble_sort(lista))
 
+
+
+resultado = lista.copy()
+
+for fim in range(len(resultado) - 1, 0, -1):
+	print(fim)
+	if resultado[fim] < resultado[fim - 1]:
+		resultado[fim], resultado[fim - 1] = resultado[fim - 1], resultado[fim]
+		print(resultado)

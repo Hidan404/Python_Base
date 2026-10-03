@@ -31,7 +31,7 @@ for p in produtos:
     print(p)         
 
 '''
-compras = []
+'''compras = []
 
 while True:
     produto = input("nome ou S para sair: ").upper().strip()
@@ -47,4 +47,4 @@ for p in compras:
     total = p[1] * p[2]
     print(f'''
         produto: {p[0]} | qtd: {p[1]} | preço: {p[2]:.2f} | total: {total:.2f}
-    ''') 
+    ''')
